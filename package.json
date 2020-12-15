@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ewa-krawczyk/user-data-test/issues"
   },
-  "homepage": "https://github.com/ewa-krawczyk/user-data-test#readme"
+  "homepage": "https://github.com/ewa-krawczyk/user-data-test#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
