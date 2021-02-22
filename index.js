@@ -13,7 +13,9 @@ function actionRemove() {
 function actionHelp() {
   console.log("Selected help");
 };
-
+function actionInvalid() {
+  console.log(`Selected command: "${command}" is invalid`);
+};
 do {
   command = readlineSync.question('What to do? : ');
   switch(command) {
@@ -30,7 +32,7 @@ do {
       actionHelp();
     break;
     default:
-      console.log(`Selected command: "${command}" is invalid`)
+      actionInvalid();
     break;
     }
 } while (command != 'quit')
