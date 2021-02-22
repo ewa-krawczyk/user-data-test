@@ -19,6 +19,7 @@ do {
           break;
         default:
           console.log(`Selected command: "${command}" is invalid`)
+          break;
       }
 } while (command != 'quit')
 
