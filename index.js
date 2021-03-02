@@ -18,6 +18,7 @@ function actionInvalid() {
 };
 do {
   command = readlineSync.question('What to do? : ');
+  
   switch(command) {
     case "add":
       actionAdd();
