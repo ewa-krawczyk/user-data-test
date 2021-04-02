@@ -1,6 +1,7 @@
 const readlineSync = require('readline-sync');
 
 let command = "";
+
 function actionAdd() {
   console.log("Selected add");
 };
@@ -16,6 +17,7 @@ function actionHelp() {
 function actionInvalid() {
   console.log(`Selected command: "${command}" is invalid`);
 };
+
 do {
   command = readlineSync.question('What to do? : ');
   
