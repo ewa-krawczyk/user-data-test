@@ -26,9 +26,8 @@ function actionInvalid(command) {
 };
 
 function mainLogic() {
-  let command = "";
   do {
-    command = readlineSync.question('What to do? : ');
+   const command = readlineSync.question('What to do? : ');
     switch(command) {
       case "add":
         actionAdd();
