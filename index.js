@@ -12,7 +12,15 @@ function actionRemove() {
   console.log("Selected remove");
 };
 function actionHelp() {
-  console.log("Selected help");
+  console.log(`User data test program help
+  
+commands:
+add     -   Adds user details
+list    -   Lists all users
+remove  -   Removes user
+help    -   Prints this message
+quit    -   Exits program
+`);
 };
 function actionInvalid() {
   console.log(`Selected command: "${command}" is invalid`);
