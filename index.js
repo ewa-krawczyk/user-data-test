@@ -24,6 +24,7 @@ quit    -   Exits program
 };
 function actionInvalid() {
   console.log(`Selected command: "${command}" is invalid`);
+  console.log("To get help type: \"help\"");
 };
 
 function mainLogic() {
