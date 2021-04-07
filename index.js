@@ -44,12 +44,12 @@ function mainLogic() {
         actionHelp();
         break;
       case "quit":
-        break;
+        return;
       default:
         actionInvalid();
         break;
       }
-  } while (command != 'quit')
+  } while (true)
 }
 
 mainLogic();
