@@ -26,9 +26,8 @@ function actionInvalid(command) {
 };
 
 function mainLogic() {
-  let command = "";
   do {
-    command = readlineSync.question('What to do? : ');
+   const command = readlineSync.question('What to do? : ');
     switch(command) {
       case "add":
         actionAdd();
@@ -43,12 +42,12 @@ function mainLogic() {
         actionHelp();
         break;
       case "quit":
-        break;
+        return;
       default:
         actionInvalid(command);
         break;
       }
-  } while (command != 'quit')
+  } while (true)
 }
 
 mainLogic();
