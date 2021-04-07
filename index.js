@@ -33,6 +33,8 @@ do {
     case "help":
       actionHelp();
       break;
+    case "quit":
+      break;
     default:
       actionInvalid();
       break;
