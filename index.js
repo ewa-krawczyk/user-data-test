@@ -21,19 +21,19 @@ do {
   switch(command) {
     case "add":
       actionAdd();
-    break;
+      break;
     case "list":
       actionList();
-    break;
+      break;
     case "remove":
       actionRemove();
-    break;
+      break;
     case "help":
       actionHelp();
-    break;
+      break;
     default:
       actionInvalid();
-    break;
+      break;
     }
 } while (command != 'quit')
 
