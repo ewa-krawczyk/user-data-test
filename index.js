@@ -1,10 +1,15 @@
 const readlineSync = require('readline-sync');
 
+let usersList = [];
+
 function actionAdd() {
+  let num = Math.random();
+  usersList.push(num);
   console.log("Selected add");
 };
 function actionList() {
-  console.log("Selected list");
+  console.log("Selected list"); 
+  console.log(usersList);
 };
 function actionRemove() {
   console.log("Selected remove");
