@@ -47,7 +47,7 @@ function mainLogic() {
         actionInvalid(command);
         break;
       }
-  } while (true)
+    } while (true)
 }
 
 mainLogic();
