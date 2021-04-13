@@ -46,8 +46,8 @@ function mainLogic() {
       default:
         actionInvalid(command);
         break;
-      }
-    } while (true)
+    }
+  } while (true)
 }
 
 mainLogic();
