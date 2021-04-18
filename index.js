@@ -51,7 +51,7 @@ function mainLogic() {
       default:
         actionInvalid(command);
         break;
-      }
+    }
   } while (true)
 }
 
