@@ -2,6 +2,38 @@ const readlineSync = require('readline-sync');
 
 let usersList = [];
 
+class userData {
+  constructor (fisrtName, lastName, phone, address) {
+    this.fisrtName = fisrtName;
+    this.lastName = lastName;
+    this.phone = phone;
+    this.address = address;
+  }
+  getFirstName() {
+    return this.firstName();
+  }
+  setFirstName(firstName) {
+    this.firstName = firstName;
+  }
+  getLastName() {
+    return this.lastName();
+  }
+  setLastName(lastName) {
+    this.lastName = lastName;
+  }
+  getPhone() {
+    return this.phone();
+  }
+  setPhone(phone) {
+    this.phone = phone;
+  }
+  getAddress() {
+    return this.address();
+  }
+  setAddress(address) {
+    this.address = address;
+  }
+};
 function actionAdd() {
   let num = Math.random();
   usersList.push(num);
