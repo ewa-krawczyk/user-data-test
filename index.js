@@ -2,6 +2,38 @@ const readlineSync = require('readline-sync');
 
 let usersList = [];
 
+class userData {
+  constructor (fisrtName, lastName, phone, address) {
+    this.fisrtName = fisrtName;
+    this.lastName = lastName;
+    this.phone = phone;
+    this.address = address;
+  }
+  getFirstName() {
+    return this.firstName();
+  }
+  setFirstName(firstName) {
+    this.firstName = firstName;
+  }
+  getLastName() {
+    return this.lastName();
+  }
+  setLastName(lastName) {
+    this.lastName = lastName;
+  }
+  getPhone() {
+    return this.phone();
+  }
+  setPhone(phone) {
+    this.phone = phone;
+  }
+  getAddress() {
+    return this.address();
+  }
+  setAddress(address) {
+    this.address = address;
+  }
+};
 function actionAdd() {
   let num = Math.random();
   usersList.push(num);
@@ -12,7 +44,11 @@ function actionList() {
   console.log(usersList);
 };
 function actionRemove() {
-  console.log("Selected remove");
+  const arrayLength = usersList.length;
+  const selectedId = readlineSync.question(`Podaj liczbę od 0 do ${arrayLength -1 }: `);
+  console.log(`selected: ${selectedId}`);
+  const removedItem = usersList.splice(selectedId, 1);
+  console.log(`removed: ${removedItem}`)
 };
 function actionHelp() {
   console.log(`User data test program help
@@ -29,7 +65,6 @@ function actionInvalid(command) {
   console.log(`Selected command: "${command}" is invalid`);
   console.log("To get help type: \"help\"");
 };
-
 function mainLogic() {
   do {
    const command = readlineSync.question('What to do? : ');
@@ -54,6 +89,5 @@ function mainLogic() {
       }
   } while (true)
 }
-
 mainLogic();
 console.log('Exiting program');
