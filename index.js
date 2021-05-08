@@ -35,9 +35,17 @@ class userData {
   }
 };
 function actionAdd() {
-  let num = Math.random();
-  usersList.push(num);
-  console.log("Selected add");
+  const firstName = readlineSync.question(`To add new user write your name: `);
+  console.log( `selected: ${firstName}`);
+  const lastName = readlineSync.question(`Write last name: `);
+  console.log( `selected: ${lastName}`);
+  const number = readlineSync.question(`Write number: `);
+  console.log( `selected: ${number}`);
+  const address = readlineSync.question(`Write address: `);
+  console.log( `selected: ${address}`);
+
+  const newUser = new userData(firstName, lastName, number, address);
+  usersList.push(newUser);
 };
 function actionList() {
   console.log("Selected list"); 
