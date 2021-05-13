@@ -45,7 +45,7 @@ function actionList() {
 };
 function actionRemove() {
   const arrayLength = usersList.length;
-  const selectedId = readlineSync.question(`Podaj liczbę od 0 do ${arrayLength -1 }: `);
+  const selectedId = readlineSync.question(`Type number from 0 to ${arrayLength -1 }: `);
   console.log(`selected: ${selectedId}`);
   const removedItem = usersList.splice(selectedId, 1);
   console.log(`removed: ${removedItem}`)
