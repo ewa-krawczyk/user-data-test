@@ -49,8 +49,11 @@ function actionAdd() {
   usersList.push(newUser);
 };
 function actionList() {
-  console.log("Selected list"); 
-  console.log(usersList);
+  console.log("Selected list");
+
+  for (i = 0; i < usersList.length; i++) {
+     console.log('\n' + 'ID: ' + (i + 1) + '\n', usersList[i]);
+  }
 };
 function actionRemove() {
   const arrayLength = usersList.length;
