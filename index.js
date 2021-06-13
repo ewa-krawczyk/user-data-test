@@ -44,7 +44,11 @@ function actionList() {
   console.log(usersList);
 };
 function actionRemove() {
-  console.log("Selected remove");
+  const arrayLength = usersList.length;
+  const selectedId = readlineSync.question(`Type number from 0 to ${arrayLength -1 }: `);
+  console.log(`selected: ${selectedId}`);
+  const removedItem = usersList.splice(selectedId, 1);
+  console.log(`removed: ${removedItem}`)
 };
 function actionHelp() {
   console.log(`User data test program help
@@ -61,7 +65,6 @@ function actionInvalid(command) {
   console.log(`Selected command: "${command}" is invalid`);
   console.log("To get help type: \"help\"");
 };
-
 function mainLogic() {
   do {
    const command = readlineSync.question('What to do? : ');
@@ -86,6 +89,5 @@ function mainLogic() {
     }
   } while (true)
 }
-
 mainLogic();
 console.log('Exiting program');
