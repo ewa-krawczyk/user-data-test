@@ -35,9 +35,18 @@ class userData {
   }
 };
 function actionAdd() {
-  let num = Math.random();
-  usersList.push(num);
-  console.log("Selected add");
+  const firstName = readlineSync.question(`To add new user type your name: `);
+  const lastName = readlineSync.question(`Type your last name: `);
+  const number = readlineSync.question(`Type your number: `);
+  const address = readlineSync.question(`Type your address: `);
+  console.log(`Created user: 
+  First name:  ${firstName}, 
+  Last name: ${lastName}, 
+  Number: ${number}, 
+  Address: ${address}`);
+  
+  const newUser = new userData(firstName, lastName, number, address);
+  usersList.push(newUser);
 };
 function actionList() {
   console.log("Selected list"); 
