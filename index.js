@@ -1,4 +1,5 @@
 const readlineSync = require('readline-sync');
+const fs = require('fs');
 
 let usersList = [];
 
@@ -76,9 +77,15 @@ add     -   Adds user details
 list    -   Lists all users
 remove  -   Removes user
 help    -   Prints this message
+save    -   ...
 quit    -   Exits program
 `);
 };
+function actionSave() {
+  const usersJson = JSON.stringify(usersList);
+  fs.writeFileSync("temp.txt", usersJson);
+  console.log('Successfully saved');
+}
 function actionInvalid(command) {
   console.log(`Selected command: "${command}" is invalid`);
   console.log("To get help type: \"help\"");
@@ -101,6 +108,9 @@ function mainLogic() {
         break;
       case "quit":
         return;
+      case "save":
+        actionSave();
+        break;
       default:
         actionInvalid(command);
         break;
