@@ -2,57 +2,63 @@ const readlineSync = require('readline-sync');
 
 let usersList = [];
 
-class userData {
-  constructor (fisrtName, lastName, phone, address) {
-    this.fisrtName = fisrtName;
+class UserData {
+  constructor (firstName, lastName, phone, address) {
+    this.firstName = firstName;
     this.lastName = lastName;
     this.phone = phone;
     this.address = address;
   }
   getFirstName() {
-    return this.firstName();
+    return this.firstName;
   }
   setFirstName(firstName) {
     this.firstName = firstName;
   }
   getLastName() {
-    return this.lastName();
+    return this.lastName;
   }
   setLastName(lastName) {
     this.lastName = lastName;
   }
   getPhone() {
-    return this.phone();
+    return this.phone;
   }
   setPhone(phone) {
     this.phone = phone;
   }
   getAddress() {
-    return this.address();
+    return this.address;
   }
   setAddress(address) {
     this.address = address;
   }
+  printUserDetails() {
+    console.log(` 
+    First name:  ${this.getFirstName()}, 
+    Last name: ${this.getLastName()}, 
+    Number: ${this.getPhone()}, 
+    Address: ${this.getAddress()}`)
+  };
 };
 function actionAdd() {
   const firstName = readlineSync.question(`To add new user type your name: `);
   const lastName = readlineSync.question(`Type your last name: `);
-  const number = readlineSync.question(`Type your number: `);
+  const phone = readlineSync.question(`Type your phone number: `);
   const address = readlineSync.question(`Type your address: `);
-  console.log(`Created user: 
-  First name:  ${firstName}, 
-  Last name: ${lastName}, 
-  Number: ${number}, 
-  Address: ${address}`);
   
-  const newUser = new userData(firstName, lastName, number, address);
+  
+  const newUser = new UserData(firstName, lastName, phone, address);
+  console.log(`Created user:`);
+  newUser.printUserDetails();
   usersList.push(newUser);
 };
 function actionList() {
   console.log("User list");
 
   for (i = 0; i < usersList.length; i++) {
-     console.log('\n' + 'ID: ' + (i + 1) + '\n', usersList[i]);
+     console.log('\n' + 'ID: ' + (i + 1));
+     usersList[i].printUserDetails();
   }
 };
 function actionRemove() {
